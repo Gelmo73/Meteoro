@@ -67,7 +67,6 @@ def agregar():
 
     meteoritos.append(temp)
     print('Registro agregado')
-    return
 
 
 def agregarExistente(registro):
@@ -160,7 +159,7 @@ def borrar():
     mostrar()
 
     try:
-        op = int(input('Elija el registro a modificar: ')) - 1
+        op = int(input('Elija el registro a borrar: ')) - 1
     except ValueError:
         print('Opcion no valida...')
         return
@@ -231,7 +230,7 @@ L.marker(['''+str(registro['Lat'])+''', '''+str(registro['Lon'])+'''])
         f.write(html)
         print(nombre, 'ahora se encuentra en el escritorio')
 
-    if input('Escriba [A] si desea visualizar su mapa inmediatamente').upper().strip() == 'A':
+    if input('Escriba [A] si desea visualizar su mapa inmediatamente: ').upper().strip() == 'A':
         webbrowser.open(file)
 
 
@@ -272,6 +271,7 @@ def menu():
         pass
     else:
         print('Debe seleccionar una opcion...')
+        input()
         menu()
 
 
